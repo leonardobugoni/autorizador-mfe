@@ -93,7 +93,7 @@ const TransferPage = (() => {
         }
 
         const valor = parseMoneyValue(valorInput.value);
-        if (!valorInput.value.trim() || valor <= 0) {
+        if (!valorInput.value.trim() || isNaN(valor) || valor <= 0) {
             valorError.textContent = 'O valor deve ser maior que zero';
             valorError.classList.remove('hidden');
             valorInput.classList.add('error');
