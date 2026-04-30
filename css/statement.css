@@ -1,0 +1,169 @@
+/* ===== Statement Page ===== */
+.statement__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 4px;
+}
+
+.statement__subtitle {
+    color: var(--text-light);
+    margin-bottom: 28px;
+    font-size: 0.95rem;
+}
+
+.statement__saldo-card {
+    background: linear-gradient(135deg, var(--secondary-color), #004080);
+    color: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 24px 28px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+}
+
+.statement__saldo-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 8px;
+}
+
+.statement__saldo-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.statement__saldo-card .spinner--dark {
+    border-color: rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+}
+
+/* ===== Statement List ===== */
+.statement__list {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.statement__item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.2s ease;
+}
+
+.statement__item:last-child {
+    border-bottom: none;
+}
+
+.statement__item:hover {
+    background: #FAFAFA;
+}
+
+.statement__item-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.statement__item--entrada .statement__item-icon {
+    background: #E8F5E9;
+    color: var(--success-color);
+}
+
+.statement__item--saida .statement__item-icon {
+    background: #FFEBEE;
+    color: var(--danger-color);
+}
+
+.statement__item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.statement__item-desc {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.statement__item-date {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.statement__item-values {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex-shrink: 0;
+}
+
+.statement__item-valor {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.statement__item--entrada .statement__item-valor {
+    color: var(--success-color);
+}
+
+.statement__item--saida .statement__item-valor {
+    color: var(--danger-color);
+}
+
+.statement__item-saldo {
+    font-size: 0.75rem;
+    color: var(--text-light);
+}
+
+/* ===== Empty State ===== */
+.statement__empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    gap: 16px;
+}
+
+.statement__empty p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .statement__item {
+        padding: 14px 16px;
+        gap: 12px;
+    }
+
+    .statement__saldo-value {
+        font-size: 1.4rem;
+    }
+
+    .statement__item-desc {
+        font-size: 0.88rem;
+    }
+
+    .statement__item-valor {
+        font-size: 0.88rem;
+    }
+}
