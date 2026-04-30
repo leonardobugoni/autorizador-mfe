@@ -1,0 +1,32 @@
+/* ===== Transfer Page ===== */
+.transfer__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 4px;
+}
+
+.transfer__subtitle {
+    color: var(--text-light);
+    margin-bottom: 28px;
+    font-size: 0.95rem;
+}
+
+.transfer__card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    box-shadow: var(--shadow);
+    max-width: 560px;
+}
+
+.transfer__form textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+@media (max-width: 768px) {
+    .transfer__card {
+        padding: 24px 20px;
+    }
+}

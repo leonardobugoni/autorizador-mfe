@@ -1,0 +1,304 @@
+/* ===== Layout ===== */
+.layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Header ===== */
+.header {
+    background: var(--white);
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header__left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header__menu-btn {
+    display: none;
+    background: none;
+    color: var(--text-color);
+    padding: 4px;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+}
+
+.header__right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header__user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header__avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.header__user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.header__user-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.header__user-conta {
+    font-size: 0.75rem;
+    color: var(--text-light);
+}
+
+.header__logout {
+    background: none;
+    color: var(--text-light);
+    padding: 8px;
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.header__logout:hover {
+    background: #FFF3F0;
+    color: var(--danger-color);
+}
+
+/* ===== Layout Body ===== */
+.layout__body {
+    display: flex;
+    flex: 1;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+    width: var(--sidebar-width);
+    background: var(--white);
+    border-right: 1px solid var(--border-color);
+    padding: 20px 0;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.sidebar__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sidebar__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: var(--transition);
+    font-size: 0.95rem;
+    border-left: 3px solid transparent;
+}
+
+.sidebar__item:hover {
+    background: #FFF8F5;
+    color: var(--primary-color);
+}
+
+.sidebar__item--active {
+    background: #FFF3ED;
+    color: var(--primary-color);
+    font-weight: 600;
+    border-left-color: var(--primary-color);
+}
+
+.sidebar__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    flex-shrink: 0;
+}
+
+/* ===== Main Content ===== */
+.main {
+    flex: 1;
+    padding: 32px;
+    overflow-y: auto;
+}
+
+/* ===== Footer ===== */
+.footer {
+    background: var(--white);
+    text-align: center;
+    padding: 16px;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    border-top: 1px solid var(--border-color);
+}
+
+/* ===== Dashboard Content ===== */
+.dashboard__greeting {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 4px;
+}
+
+.dashboard__subtitle {
+    color: var(--text-light);
+    margin-bottom: 32px;
+    font-size: 1rem;
+}
+
+.dashboard__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.dashboard__card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.dashboard__card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.dashboard__card--saldo {
+    background: linear-gradient(135deg, var(--secondary-color), #004080);
+    color: var(--white);
+}
+
+.dashboard__card--saldo .dashboard__card-label {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.dashboard__card--saldo svg {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.dashboard__card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.dashboard__card-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.dashboard__card-value {
+    font-size: 2rem;
+    font-weight: 700;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard__card--saldo .spinner--dark {
+    border-color: rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+}
+
+.dashboard__quick-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.dashboard__action-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 12px;
+    background: var(--bg-color);
+    border-radius: var(--radius);
+    color: var(--text-color);
+    transition: var(--transition);
+    font-size: 0.85rem;
+}
+
+.dashboard__action-btn:hover {
+    background: #FFF3ED;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .header__menu-btn {
+        display: block;
+    }
+
+    .header__user-info {
+        display: none;
+    }
+
+    .sidebar {
+        position: fixed;
+        left: -280px;
+        top: 64px;
+        bottom: 0;
+        width: 260px;
+        z-index: 99;
+        box-shadow: var(--shadow-lg);
+    }
+
+    .sidebar--open {
+        left: 0;
+    }
+
+    .main {
+        padding: 20px 16px;
+    }
+
+    .dashboard__cards {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard__greeting {
+        font-size: 1.4rem;
+    }
+
+    .dashboard__card-value {
+        font-size: 1.6rem;
+    }
+}
