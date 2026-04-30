@@ -38,6 +38,7 @@ const App = (() => {
             return;
         }
 
+        document.querySelectorAll('.modal-overlay').forEach(el => el.remove());
         app.innerHTML = '';
         app.className = 'page-enter';
         const content = await page.render();

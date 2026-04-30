@@ -186,7 +186,8 @@ const TransferPage = (() => {
 
         document.getElementById('novaTransferenciaBtn').addEventListener('click', () => {
             overlay.remove();
-            document.getElementById('transferForm').reset();
+            const form = document.getElementById('transferForm');
+            if (form) form.reset();
         });
 
         document.getElementById('voltarDashboardBtn').addEventListener('click', () => {

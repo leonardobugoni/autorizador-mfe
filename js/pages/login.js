@@ -55,7 +55,7 @@ const LoginPage = (() => {
             errorDiv.classList.add('hidden');
 
             const numeroConta = document.getElementById('numeroConta').value.trim();
-            const senha = document.getElementById('senha').value.trim();
+            const senha = document.getElementById('senha').value;
 
             if (!numeroConta || !senha) {
                 errorText.textContent = 'Preencha todos os campos';
