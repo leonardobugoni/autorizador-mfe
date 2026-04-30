@@ -32,8 +32,8 @@ const DashboardPage = (() => {
     }
 
     function renderLayout(contentHTML) {
-        const nome = Auth.getNomeTitular() || 'Usuario';
-        const conta = Auth.getNumeroConta() || '---';
+        const nome = App.escapeHTML(Auth.getNomeTitular() || 'Usuario');
+        const conta = App.escapeHTML(Auth.getNumeroConta() || '---');
         const currentHash = window.location.hash || '#dashboard';
         const menuItems = getMenuItems();
 
@@ -93,7 +93,7 @@ const DashboardPage = (() => {
     }
 
     async function render() {
-        const nome = Auth.getNomeTitular() || 'Usuario';
+        const nome = App.escapeHTML(Auth.getNomeTitular() || 'Usuario');
         const contentHTML = `
             <div class="dashboard">
                 <h2 class="dashboard__greeting">Ola, ${nome}!</h2>

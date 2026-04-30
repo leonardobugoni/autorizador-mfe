@@ -81,7 +81,7 @@ const StatementPage = (() => {
                 const icon = isEntrada ? arrowUpIcon() : arrowDownIcon();
                 const colorClass = isEntrada ? 'statement__item--entrada' : 'statement__item--saida';
                 const valor = item.valor ?? item.amount ?? 0;
-                const descricao = item.descricao || item.description || 'Movimentacao';
+                const descricao = App.escapeHTML(item.descricao || item.description || 'Movimentacao');
                 const data = item.data || item.dataHora || item.createdAt || item.date || '';
                 const saldoPosterior = item.saldoPosterior ?? item.saldoApos ?? null;
 

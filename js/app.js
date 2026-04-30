@@ -60,9 +60,9 @@ const App = (() => {
 
         if (!window.location.hash) {
             window.location.hash = '#login';
+        } else {
+            render();
         }
-
-        render();
     }
 
     function showToast(message, type = 'info', duration = 3000) {
@@ -111,11 +111,18 @@ const App = (() => {
 
     document.addEventListener('DOMContentLoaded', init);
 
+    function escapeHTML(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+
     return {
         navigate,
         showToast,
         formatCurrency,
         formatDate,
-        generateUUID
+        generateUUID,
+        escapeHTML
     };
 })();

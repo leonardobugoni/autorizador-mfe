@@ -147,6 +147,8 @@ const TransferPage = (() => {
     }
 
     function showSuccessModal(contaDestino, valor, descricao) {
+        const safeContaDestino = App.escapeHTML(contaDestino);
+        const safeDescricao = descricao ? App.escapeHTML(descricao) : '';
         const overlay = document.createElement('div');
         overlay.className = 'modal-overlay';
         overlay.innerHTML = `
@@ -161,16 +163,16 @@ const TransferPage = (() => {
                 <div class="modal__details">
                     <div class="modal__details-row">
                         <span class="modal__details-label">Conta destino</span>
-                        <span class="modal__details-value">${contaDestino}</span>
+                        <span class="modal__details-value">${safeContaDestino}</span>
                     </div>
                     <div class="modal__details-row">
                         <span class="modal__details-label">Valor</span>
                         <span class="modal__details-value">${App.formatCurrency(valor)}</span>
                     </div>
-                    ${descricao ? `
+                    ${safeDescricao ? `
                     <div class="modal__details-row">
                         <span class="modal__details-label">Descricao</span>
-                        <span class="modal__details-value">${descricao}</span>
+                        <span class="modal__details-value">${safeDescricao}</span>
                     </div>
                     ` : ''}
                 </div>
